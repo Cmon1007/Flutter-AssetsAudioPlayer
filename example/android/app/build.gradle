@@ -36,14 +36,11 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
-    lintOptions {
-        disable 'InvalidPackage'
-    }
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.github.florent37.example"
-        minSdk 19
+        minSdk 24
         targetSdk 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -59,6 +56,11 @@ android {
         debug {
             multiDexEnabled true
         }	        
+    }
+//    namespace 'com.github.florent37.assets_audio_player'
+    namespace 'com.github.florent37.example'
+    lint {
+        disable 'InvalidPackage'
     }
 }
 

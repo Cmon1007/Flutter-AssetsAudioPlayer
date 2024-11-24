@@ -8,18 +8,18 @@ import 'abstract_web_player.dart';
 
 /// Web plugin
 class AssetsAudioPlayerWebPlugin {
-  final Map<String, WebPlayer> _players = {};
+  final Map<String, WebPlayerHtml> _players = {};
   final BinaryMessenger messenger;
 
   AssetsAudioPlayerWebPlugin({required this.messenger});
 
-  WebPlayer _newPlayer(String id, MethodChannel channel) {
+  WebPlayerHtml _newPlayer(String id, MethodChannel channel) {
     return WebPlayerHtml(
       channel: channel,
     );
   }
 
-  WebPlayer _getOrCreate(String id) {
+  WebPlayerHtml _getOrCreate(String id) {
     if (_players.containsKey(id)) {
       return _players[id]!;
     } else {
